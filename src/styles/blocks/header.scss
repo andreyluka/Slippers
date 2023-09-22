@@ -1,0 +1,10 @@
+.header {
+   padding: 10px;
+   background-color: $orange;
+
+   &__text {
+      font-weight: 500;
+      text-transform: uppercase; 
+      text-align: center;
+   }
+}

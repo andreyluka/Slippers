@@ -1,0 +1,86 @@
+.goods {
+   padding: 11px 0 41px;
+   background-color: $gray;
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+   }
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+   }
+
+   &__best {
+      color: $green-light;
+   }
+
+   &__title {
+      color: $black-light;
+      font-size: 19px;
+      font-weight: 700;
+      text-transform: uppercase; 
+   }
+
+   &__desc {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      font-size: 15px;
+   }
+
+   &__desc-category {
+      font-weight: 700; 
+   }
+
+   &__selects {
+      display: flex;
+      column-gap: 16px;
+      margin-bottom: 20px;
+   }
+
+   &__btn {
+      flex: 1;
+      position: relative;
+
+      &::after {
+         content: '';
+         display: block;
+         width: 1.462em;
+         height: 0.693em;
+         background: url('./images/content/arrow.png') center / contain no-repeat;
+         position: absolute;
+         top: 57%;
+         right: 5.2%;
+         pointer-events: none;
+      }
+   }
+
+   &__btn-name {
+      text-align: center;
+      color: $black-light;
+      font-size: 10px;
+      margin-bottom: 4px;
+   }
+
+   &__btn-select {
+      width: 100%;
+      appearance: none;
+      background: white;
+      box-shadow: none;
+      border-radius: 16px;
+      border: none;
+      color: $black-light;
+      text-transform: uppercase;
+      padding: 14px;
+      text-align: center;
+      position: relative;
+      outline: none;
+      font-size: 22px;
+      font-weight: 700; 
+      cursor: pointer;
+   }
+}

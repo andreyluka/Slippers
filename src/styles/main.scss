@@ -1,0 +1,18 @@
+// variables
+
+$gray: #F0F0F0;
+$bisque: #FFD1AC;
+$black-light: #2C2B31;
+$orange-light: #F8B656;
+$orange: #F19D2F;
+$orange-dark: #E27500;
+$green-light: #37D997;
+$green: #00B67A;
+
+
+// layout
+
+@import "./layout/layout.scss";
+@import "./layout/fonts.scss";
+
+@import "./blocks/*.scss";

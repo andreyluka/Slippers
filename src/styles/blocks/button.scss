@@ -1,0 +1,23 @@
+.button {
+   display: block;
+   text-align: center;
+   width: 100%;
+   padding: 0.4em;
+   font-size: 30px;
+   font-weight: 500;
+   line-height: 1;
+   text-transform: uppercase; 
+   text-decoration: none;
+   border-radius: 15px;
+   background: $green-light; 
+   color: white;
+   transition: 0.3s;
+   
+   &:hover {
+      background: $green;
+   }
+
+   &:active {
+      transform: scale(0.92);
+   }
+}

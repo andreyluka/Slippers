@@ -1,0 +1,19 @@
+.rating {
+   display: flex;
+   align-items: center;
+   
+   &__stars {
+      display: flex;
+      margin-right: 6px;
+   }
+
+   &__star {
+      width: 16px;
+      height: 15.2px;
+   }
+
+   &__star-icon {
+      fill: $orange-light;
+      stroke: $orange-light;
+   }
+}
