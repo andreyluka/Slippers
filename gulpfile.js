@@ -2,6 +2,7 @@ const {src, dest, task, series, watch, parallel} = require('gulp');
 const rm = require('gulp-rm');
 const sass = require('gulp-sass')(require('node-sass'));
 const concat = require('gulp-concat');
+const tildeImporter = require('node-sass-tilde-importer');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 const sassGlob = require('gulp-sass-glob');
@@ -17,7 +18,7 @@ const gulpif = require('gulp-if');
 
 const env = process.env.NODE_ENV;
 
-const {SRC_PATH, DIST_PATH, STYLES_LIBS} = require('./gulp.config');
+const {SRC_PATH, DIST_PATH} = require('./gulp.config');
 
 task('clean', () => {
    return src(`${DIST_PATH}/**/*`, {read: false}).pipe(rm());
@@ -48,11 +49,11 @@ task('copy:fonts', () => {
 });
 
 task('styles', () => {
-   return src([...STYLES_LIBS, `${SRC_PATH}/styles/main.scss`])
+   return src(`${SRC_PATH}/styles/main.scss`)
    .pipe(gulpif(env === 'dev', sourcemaps.init()))
    .pipe(concat('main.min.scss'))
    .pipe(sassGlob())
-   .pipe(sass().on('error', sass.logError))
+   .pipe(sass({importer: tildeImporter}).on('error', sass.logError))
    .pipe(gulpif(env === 'prod', autoprefixer({cascade: false})))
    .pipe(gulpif(env === 'prod', gcmq()))
    .pipe(gulpif(env === 'prod', cleanCSS()))
